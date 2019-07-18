@@ -18,7 +18,7 @@ class Kframework < Formula
   depends_on "flex"
 
   def install
-    system "llvm-backend/src/main/native/llvm-backend/install-rust"
+#    system "llvm-backend/src/main/native/llvm-backend/install-rust"
     system "sh", "-c", "curl -sSL https://get.haskellstack.org/ | sh"
     system "k-distribution/src/main/scripts/bin/k-configure-opam"
     system "mvn", "package"
