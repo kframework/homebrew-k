@@ -20,7 +20,7 @@ class Kframework < Formula
 
   def install
     system "llvm-backend/src/main/native/llvm-backend/install-rust"
-    system "k-distribution/src/main/scripts/bin/k-configure-opam"
+    system "sh", "-c", "INIT_ARGS=--disable-sandboxing k-distribution/src/main/scripts/bin/k-configure-opam"
     system "mvn", "package"
     system "sh", "-c", "DESTDIR=#{prefix} src/main/scripts/package"
   end
