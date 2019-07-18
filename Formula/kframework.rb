@@ -22,6 +22,7 @@ class Kframework < Formula
     system "sh", "-c", "curl -sSL https://get.haskellstack.org/ | sh"
     system "k-distribution/src/main/scripts/bin/k-configure-opam"
     system "mvn", "package"
+    system "sh", "-c", "DESTDIR=#{prefix} src/main/scripts/package"
   end
 
   test do
