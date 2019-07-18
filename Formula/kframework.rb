@@ -2,7 +2,7 @@ class Kframework < Formula
   desc "K Framework Tools 5.0"
   homepage ""
   url "https://github.com/kframework/k/releases/download/5.1b2/k-5.1b2.tar.gz"
-  sha25 "4d7440d5c6cdb31fb8b8439a19ef1531be9734386acbd7586ab811afed8f1911"
+  sha256 "4d7440d5c6cdb31fb8b8439a19ef1531be9734386acbd7586ab811afed8f1911"
   depends_on "maven" => :build
   depends_on "cmake" => :build
   depends_on "boost" => :build
