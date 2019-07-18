@@ -6,6 +6,7 @@ class Kframework < Formula
   depends_on "maven" => :build
   depends_on "cmake" => :build
   depends_on "boost" => :build
+  depends_on "haskell-stack" => :build
   depends_on "libyaml"
   depends_on "jemalloc"
   depends_on "llvm@8" => :build
@@ -18,8 +19,7 @@ class Kframework < Formula
   depends_on "flex"
 
   def install
-#    system "llvm-backend/src/main/native/llvm-backend/install-rust"
-    system "sh", "-c", "curl -sSL https://get.haskellstack.org/ | sh"
+    system "llvm-backend/src/main/native/llvm-backend/install-rust"
     system "k-distribution/src/main/scripts/bin/k-configure-opam"
     system "mvn", "package"
     system "sh", "-c", "DESTDIR=#{prefix} src/main/scripts/package"
