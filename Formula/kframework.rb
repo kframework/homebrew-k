@@ -1,4 +1,4 @@
-class KFramework < Formula
+class Kframework < Formula
   desc "K Framework Tools 5.0"
   homepage ""
   url "https://github.com/kframework/k/archive/5.1b2.tar.gz"
