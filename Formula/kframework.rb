@@ -22,7 +22,7 @@ class Kframework < Formula
     system "llvm-backend/src/main/native/llvm-backend/install-rust"
     system "sh", "-c", "INIT_ARGS=--disable-sandboxing k-distribution/src/main/scripts/bin/k-configure-opam"
     system "sh", "-c", "export PATH=\"$PATH:$CARGO_HOME/bin\"; mvn package -DskipTests"
-    system "sh", "-c", "DESTDIR=#{prefix} src/main/scripts/package"
+    system "sh", "-c", "DESTDIR= PREFIX=#{prefix} src/main/scripts/package"
   end
 
   test do
