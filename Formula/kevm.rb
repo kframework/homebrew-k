@@ -9,7 +9,7 @@ class Kevm < Formula
   depends_on "clang@6" => :build
   depends_on "cmake" => :build
   depends_on "jemalloc"
-  depensd_on "cryptopp"
+  depends_on "cryptopp"
 
   def install
     system "make", "K_RELEASE=/usr/lib/kframework", "build-node"
