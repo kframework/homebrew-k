@@ -6,7 +6,7 @@ class Kevm < Formula
   depends_on "kframework" => :build
   depends_on "protobuf" => :build
   depends_on "pandoc" => :build
-  depends_on "clang@6" => :build
+  depends_on "llvm@6" => :build
   depends_on "cmake" => :build
   depends_on "jemalloc"
   depends_on "cryptopp"
