@@ -1,8 +1,8 @@
 class Kevm < Formula
   desc "KEVM 1.0.0"
   homepage ""
-  url "https://github.com/kframework/evm-semantics/releases/download/v1.0.0b3/kevm-1.0.0b3.tar.gz"
-  sha256 "6964a200f109078f3558b25878ff9753476b7c406ecddfda94f4bec4b2b36d46"
+  url "https://github.com/kframework/evm-semantics/releases/download/v1.0.0b4/kevm-1.0.0b4.tar.gz"
+  sha256 "88bd5da9e6834d2f6da5552caf3015628466188cdad5dc2e97ca174aa1a8bb48"
   depends_on "kframework" => :build
   depends_on "protobuf" => :build
   depends_on "pandoc" => :build
