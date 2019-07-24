@@ -5,6 +5,7 @@ class Kevm < Formula
   sha256 "88bd5da9e6834d2f6da5552caf3015628466188cdad5dc2e97ca174aa1a8bb48"
   depends_on "kframework" => :build
   depends_on "protobuf" => :build
+  depends_on "autoconf" => :build
   depends_on "automake" => :build
   depends_on "libtool" => :build
   depends_on "pandoc" => :build
