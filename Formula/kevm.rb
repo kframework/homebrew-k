@@ -15,7 +15,7 @@ class Kevm < Formula
   depends_on "openssl" => :build
 
   def install
-    system "make", "libsecp256k1"
+    system "make", "BUILD_LOCAL=#{prefix}", "libsecp256k1"
     system "make", "K_RELEASE=/usr/local/lib/kframework", "LIBFF_CC=clang", "LIBFF_CXX=clang++", "BUILD_LOCAL=#{prefix}", "build-node"
     system "make", "K_RELEASE=/usr/local/lib/kframework", "INSTALL_PREFIX=#{prefix}", "install"
   end
