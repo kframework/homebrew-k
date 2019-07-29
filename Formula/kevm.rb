@@ -12,6 +12,10 @@ class Kevm < Formula
   depends_on "cmake" => :build
   depends_on "jemalloc"
   depends_on "cryptopp"
+  depends_on "libyaml"
+  depends_on "jemalloc"
+  depends_on "gmp"
+  depends_on "mpfr"
   depends_on "openssl" => :build
 
   bottle do
