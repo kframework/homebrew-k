@@ -14,6 +14,8 @@ class Kevm < Formula
   depends_on "cryptopp"
   depends_on "openssl" => :build
 
+  bottle do                                                                                                                                                                                                            root_url "https://github.com/kframework/evm-semantics/releases/download/v1.0.0b6/"                                                                                                                                 cellar :any                                                                                                                                                                                                        sha256 "75debd13f28b55abc8250555572159d9ace7d85ffed03a990c035d341dfd53ed" => :sierra                                                                                                                             end
+
   def install
     system "make", "BUILD_LOCAL=#{prefix}", "libsecp256k1"
     system "make", "K_RELEASE=/usr/local/lib/kframework", "LIBFF_CC=clang", "LIBFF_CXX=clang++", "BUILD_LOCAL=#{prefix}", "build-node"
