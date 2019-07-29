@@ -4,7 +4,7 @@ class Kevm < Formula
   url "https://github.com/kframework/evm-semantics/releases/download/v1.0.0b6/kevm-1.0.0b6.tar.gz"
   sha256 "44dd710259f4ee7054f858eff440cac21870cc6ab99d4a374ec0202ebba195ca"
   depends_on "kframework" => :build
-  depends_on "protobuf" => :build
+  depends_on "protobuf"
   depends_on "autoconf" => :build
   depends_on "automake" => :build
   depends_on "libtool" => :build
