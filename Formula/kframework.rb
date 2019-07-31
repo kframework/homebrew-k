@@ -19,6 +19,8 @@ class Kframework < Formula
   depends_on "flex"
 
   def install
+    ENV["SDKROOT"] = MacOS.sdk_path
+
     system "llvm-backend/src/main/native/llvm-backend/install-rust"
     system "sh", "-c", "INIT_ARGS=--disable-sandboxing k-distribution/src/main/scripts/bin/k-configure-opam"
     system "sh", "-c", "export PATH=\"$PATH:$CARGO_HOME/bin\"; mvn package -DskipTests -Dproject.build.type=FastBuild"
