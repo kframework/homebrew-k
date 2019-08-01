@@ -20,9 +20,10 @@ class Kevm < Formula
   depends_on "openssl" => :build
 
   bottle do
-    root_url "https://github.com/kframework/evm-semantics/releases/download/v1.0.0b6/"
+    root_url "https://github.com/kframework/evm-semantics/releases/download/v1.0.0-a47e4b2/"
     cellar :any
-    sha256 "75debd13f28b55abc8250555572159d9ace7d85ffed03a990c035d341dfd53ed" => :sierra
+    rebuild 1
+    sha256 "b71ff3c060e327c9a544b28a3c9b636bdb7126883491c01134753fd7842bc36b" => :mojave
   end
 
   def install
