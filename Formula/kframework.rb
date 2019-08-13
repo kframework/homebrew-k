@@ -20,11 +20,19 @@ class Kframework < Formula
 
   def install
     ENV["SDKROOT"] = MacOS.sdk_path
+    ENV["PATH"] = ENV["PATH"] + ":" + ENV["CARGO_HOME"] + "/bin"
+    ENV["DESTDIR"] = ""
+    ENV["PREFIX"] = "#{prefix}"
 
     system "llvm-backend/src/main/native/llvm-backend/install-rust"
-    system "sh", "-c", "INIT_ARGS=--disable-sandboxing k-distribution/src/main/scripts/bin/k-configure-opam"
-    system "sh", "-c", "export PATH=\"$PATH:$CARGO_HOME/bin\"; mvn package -DskipTests -Dproject.build.type=FastBuild"
-    system "sh", "-c", "DESTDIR= PREFIX=#{prefix} src/main/scripts/package"
+    system "mvn", "package", "-DskipTests", "-Dproject.build.type=FastBuild"
+    system "src/main/scripts/package"
+  end
+
+  def post_install
+    ENV["OPAMROOT"] = "#{prefix}/lib/opamroot"
+    ENV["INIT_ARGS"] = "--disable-sandboxing"
+    system "k-distribution/src/main/scripts/bin/k-configure-opam"
   end
 
   test do
