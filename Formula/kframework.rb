@@ -30,9 +30,9 @@ class Kframework < Formula
   end
 
   def post_install
-    ENV["OPAMROOT"] = "#{prefix}/lib/opamroot"
+    ENV["OPAMROOT"] = "#{prefix}/lib/kframework/lib/opamroot"
     ENV["INIT_ARGS"] = "--disable-sandboxing"
-    system "#{prefix}/bin/k-configure-opam"
+    system "#{prefix}/lib/kframework/bin/k-configure-opam"
   end
 
   test do
