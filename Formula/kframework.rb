@@ -9,7 +9,7 @@ class Kframework < Formula
   depends_on "haskell-stack" => :build
   depends_on "libyaml"
   depends_on "jemalloc"
-  depends_on "llvm@8" => :build
+  depends_on "llvm@8"
   depends_on "gmp"
   depends_on "mpfr"
   depends_on "z3"
