@@ -1,5 +1,11 @@
 class Kframework < Formula
   desc "K Framework Tools 5.0"
+  bottle do
+    root_url "https://github.com/kframework/k/releases/download/nightly-1a995fa94/"
+    cellar :any
+    sha256 "b505c3057e3a1a8700e5fae4bad28b868f9fbd198923e84a93d621406cd092e6" => :mojave
+  end
+
   homepage ""
   url "file:////Users/jenkins-slave/workspace/k_master/homebrew-k/../kframework-5.0.0.tar.gz"
   sha256 "a5eeabf05d4436629c8179d3dedddb783305949894cc02aae57c99c1736be705"
