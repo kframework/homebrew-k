@@ -7,8 +7,8 @@ class Kframework < Formula
   end
 
   homepage ""
-  url "https://github.com/kframework/k/releases/download/nightly-ad4cbcb9d/kframework-5.0.0-src.tar.gz"
-  sha256 "f70fbb587083316adfbfbe2595e1292606916d59c821f0e13d56cbf3c8c2ee98"
+  url "file:////Users/jenkins-slave/workspace/k_master/homebrew-k/../kframework-5.0.0-src.tar.gz"
+  sha256 "e429b7436d95cb51268cfc8e5f937077135dfa5ef5159526e9abc35456a52c6d"
   depends_on "maven" => :build
   depends_on "cmake" => :build
   depends_on "boost" => :build
@@ -30,7 +30,6 @@ class Kframework < Formula
     ENV["DESTDIR"] = ""
     ENV["PREFIX"] = "#{prefix}"
 
-    system "llvm-backend/src/main/native/llvm-backend/install-rust"
     system "mvn", "package", "-DskipTests", "-Dproject.build.type=FastBuild"
     system "src/main/scripts/package"
   end
