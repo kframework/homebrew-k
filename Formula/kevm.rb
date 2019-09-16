@@ -30,8 +30,8 @@ class Kevm < Formula
     ENV["SDKROOT"] = MacOS.sdk_path
     ENV["CPLUS_INCLUDE_PATH"] = "#{HOMEBREW_PREFIX}/include"
     system "make", "BUILD_LOCAL=#{prefix}", "libsecp256k1"
-    system "make", "K_RELEASE=/usr/local/lib/kframework", "LIBFF_CC=clang", "LIBFF_CXX=clang++", "BUILD_LOCAL=#{prefix}", "build-node"
-    system "make", "K_RELEASE=/usr/local/lib/kframework", "INSTALL_PREFIX=#{prefix}", "install"
+    system "make", "K_RELEASE=/usr/local/lib/kframework", "RELEASE=1", "LIBFF_CC=clang", "LIBFF_CXX=clang++", "BUILD_LOCAL=#{prefix}", "build-node"
+    system "make", "K_RELEASE=/usr/local/lib/kframework", "RELEASE=1", "INSTALL_PREFIX=#{prefix}", "install"
   end
 
   test do
