@@ -10,6 +10,7 @@ class Kevm < Formula
   depends_on "libtool" => :build
   depends_on "pandoc" => :build
   depends_on "cmake" => :build
+  depends_on "llvm@8" => :build
   depends_on "jemalloc"
   depends_on "cryptopp"
   depends_on "libyaml"
