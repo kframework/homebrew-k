@@ -30,7 +30,7 @@ class Kevm < Formula
   def install
     system "make", "BUILD_LOCAL=#{prefix}", "libsecp256k1"
     system "make", "K_RELEASE=/usr/local/lib/kframework", "RELEASE=1", "LIBFF_CC=clang", "LIBFF_CXX=clang++", "BUILD_LOCAL=#{prefix}", "build-node"
-    system "make", "K_RELEASE=/usr/local/lib/kframework", "RELEASE=1", "INSTALL_PREFIX=#{prefix}", "install"
+    system "make", "K_RELEASE=/usr/local/lib/kframework", "RELEASE=1", "BUILD_LOCAL=#{prefix}", "INSTALL_PREFIX=#{prefix}", "install"
   end
 
   test do
