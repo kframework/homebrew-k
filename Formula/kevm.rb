@@ -14,11 +14,10 @@ class Kevm < Formula
   depends_on "jemalloc"
   depends_on "cryptopp"
   depends_on "libyaml"
-  depends_on "jemalloc"
   depends_on "gmp"
   depends_on "mpfr"
   depends_on "libffi"
-  depends_on "openssl" => :build
+  depends_on "openssl@1.1" => :build
 
   bottle do
     root_url "https://github.com/kframework/evm-semantics/releases/download/v1.0.0-a47e4b2/"
