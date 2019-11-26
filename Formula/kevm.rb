@@ -17,6 +17,7 @@ class Kevm < Formula
   depends_on "gmp"
   depends_on "mpfr"
   depends_on "libffi"
+  depends_on "z3" => :build
   depends_on "openssl@1.1" => :build
 
   bottle do
