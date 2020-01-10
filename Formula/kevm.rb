@@ -1,8 +1,8 @@
 class Kevm < Formula
   desc "KEVM 1.0.0"
   homepage ""
-  url "https://github.com/kframework/evm-semantics/releases/download/v1.0.0-a47e4b2/kevm-1.0.0-src.tar.gz"
-  sha256 "6e9d595312109cd3dcab339a6f0fa264adb5ac32813e23e1327ed16dce6bd950"
+  url "file:////Users/jenkins-slave/workspace/evm-semantics_master/homebrew-k/../kevm-1.0.0-src.tar.gz"
+  sha256 "836b23c1b784f5d6c7bae266ede4b95112fe3fab5cd64c0f0e6dd12c1a6b7fc1"
   depends_on "kframework" => :build
   depends_on "protobuf"
   depends_on "autoconf" => :build
