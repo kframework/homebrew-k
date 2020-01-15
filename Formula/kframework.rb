@@ -21,7 +21,7 @@ class Kframework < Formula
   depends_on "z3"
   depends_on "opam"
   depends_on "pkg-config" => :build
-  depends_on "bison" => :build
+  depends_on "bison"
   depends_on "flex"
 
   def install
