@@ -1,9 +1,9 @@
 class Kframework < Formula
   desc "K Framework Tools 5.0"
   bottle do
-    root_url "https://github.com/kframework/k/releases/download/v5.0.0-fb685f4/"
-    rebuild 25
-    sha256 "d88ce3c22077ac8798ebdeb10eb8d0c66d5d15fc81744fda5351eb5d704b77b0" => :mojave
+    root_url "https://github.com/kframework/k/releases/download/v5.0.0-8ebd956/"
+    rebuild 26
+    sha256 "db7cd73e373e1f43bfd893e5be85360e252f959e4bee6d2bddcfaec7d3a5b884" => :mojave
   end
 
   homepage ""
