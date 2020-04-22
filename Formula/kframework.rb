@@ -30,7 +30,7 @@ class Kframework < Formula
     ENV["PREFIX"] = "#{prefix}"
 
     system "mvn", "package", "-DskipTests", "-Dproject.build.type=FastBuild"
-    system "src/main/scripts/package"
+    system "package/package"
   end
 
   def post_install
