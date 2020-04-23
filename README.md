@@ -1,2 +1,3 @@
 # homebrew-k
-K Homebrew tap
+
+[K Framework](https://github.com/kframework/k) Homebrew tap
