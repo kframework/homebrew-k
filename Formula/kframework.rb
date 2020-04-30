@@ -1,13 +1,13 @@
 class Kframework < Formula
   desc "K Framework Tools 5.0"
   bottle do
-    root_url "https://github.com/kframework/k/releases/download/v5.0.0-cdc4845/"
-    sha256 "003deb799bf58e3c807836e08cb4b269999deb26be27e1aa0f569b8405f557d3" => :mojave
+    root_url "https://github.com/kframework/k/releases/download/v5.0.0-fdc13d0/"
+    sha256 "215ede5b40d845e4ec3efff7f3afb9a4184cd20bf9bbd186d1c5fa7f416afb30" => :mojave
   end
 
   homepage ""
-  url "https://github.com/kframework/k/releases/download/v5.0.0-cdc4845/kframework-5.0.0-src.tar.gz"
-  sha256 "395336508484798c67cec8b63d46b4cba0ed1747bc1a799c6b04b42d952edf40"
+  url "https://github.com/kframework/k/releases/download/v5.0.0-fdc13d0/kframework-5.0.0-src.tar.gz"
+  sha256 "e42c2b9d4c70b2dfbc579ea1e7d2b842e41d55bae5d135f5d1c8bc94c721dd4d"
   depends_on "maven" => :build
   depends_on "cmake" => :build
   depends_on "boost" => :build
