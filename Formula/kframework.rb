@@ -25,7 +25,6 @@ class Kframework < Formula
 
   def install
     ENV["SDKROOT"] = MacOS.sdk_path
-    ENV["PATH"] = ENV["PATH"] + ":" + ENV["CARGO_HOME"] + "/bin"
     ENV["DESTDIR"] = ""
     ENV["PREFIX"] = "#{prefix}"
 
@@ -34,9 +33,9 @@ class Kframework < Formula
   end
 
   def post_install
-    ENV["OPAMROOT"] = "#{prefix}/lib/kframework/lib/opamroot"
+    ENV["OPAMROOT"] = "#{prefix}/lib/kframework/opamroot"
     ENV["INIT_ARGS"] = "--disable-sandboxing"
-    system "#{prefix}/lib/kframework/bin/k-configure-opam"
+    system "#{prefix}/bin/k-configure-opam"
   end
 
   test do
