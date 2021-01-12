@@ -19,7 +19,6 @@ class Kframework < Formula
   depends_on "gmp"
   depends_on "mpfr"
   depends_on "z3"
-  depends_on "opam"
   depends_on "pkg-config" => :build
   depends_on "bison"
   depends_on "flex"
@@ -31,12 +30,6 @@ class Kframework < Formula
 
     system "mvn", "package", "-DskipTests", "-Dproject.build.type=FastBuild"
     system "package/package"
-  end
-
-  def post_install
-    ENV["OPAMROOT"] = "#{prefix}/lib/kframework/opamroot"
-    ENV["INIT_ARGS"] = "--disable-sandboxing"
-    system "#{prefix}/bin/k-configure-opam"
   end
 
   test do
