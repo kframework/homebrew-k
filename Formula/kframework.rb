@@ -6,7 +6,7 @@ class Kframework < Formula
   end
 
   homepage ""
-  url "file:////Users/jenkins-slave/workspace/k_release/homebrew-k/../kframework-5.0.21-src.tar.gz"
+  url "https://github.com/kframework/k/releases/download/v5.0.21/kframework-5.0.21-src.tar.gz"
   sha256 "a9db436421b0c47e0bd7b12a2d861b335153ceced4a3e2b26e53e6833f0809a1"
   depends_on "maven" => :build
   depends_on "cmake" => :build
