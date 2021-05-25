@@ -1,9 +1,9 @@
 class Kframework < Formula
   desc "K Framework Tools 5.0"
   bottle do
-    root_url "https://github.com/kframework/k/releases/download/v5.1.29/"
-    rebuild 7
-    sha256 mojave: "d1fcfdfc30151d933c626b623642b79075c072dbac5b32b31f49248f79509f65"
+    root_url "https://github.com/kframework/k/releases/download/v5.1.33/"
+    rebuild 8
+    sha256 mojave: "8c4982c5ddd5d7ff34c3bf4e49c5ceec93d73cb69305b4c4286c404d3715a141"
   end
 
   homepage ""
