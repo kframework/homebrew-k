@@ -7,8 +7,8 @@ class Kframework < Formula
   end
 
   homepage ""
-  url "https://github.com/kframework/k/releases/download/v5.1.34/kframework-5.1.34-src.tar.gz"
-  sha256 "0e5930d2ea0210977c48006bb193a3ab39d495ab4e16adf42489326ab5be4c3c"
+  url "file:////Users/jenkins-slave/workspace/k_release/homebrew-k/../kframework-5.1.39-src.tar.gz"
+  sha256 "e3cee8812313648d2d661048a779dca608b51c82e2faa230c72c0068438492bf"
   depends_on "maven" => :build
   depends_on "cmake" => :build
   depends_on "boost" => :build
