@@ -22,7 +22,6 @@ class Kevm < Formula
 
   bottle do
     root_url "https://github.com/kframework/evm-semantics/releases/download/v1.0.0-a47e4b2/"
-    cellar :any
     rebuild 1
     sha256 "b71ff3c060e327c9a544b28a3c9b636bdb7126883491c01134753fd7842bc36b" => :mojave
   end
