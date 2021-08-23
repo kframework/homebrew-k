@@ -18,7 +18,7 @@ class Kframework < Formula
   depends_on "gmp"
   depends_on "jemalloc"
   depends_on "libyaml"
-  depends_on "llvm@8"
+  depends_on "llvm@12"
   depends_on "mpfr"
   depends_on "z3"
 
