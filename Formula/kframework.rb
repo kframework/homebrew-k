@@ -1,7 +1,7 @@
 class Kframework < Formula
   desc "K Framework Tools 5.0"
   homepage ""
-  url "file:////Users/jenkins-slave/workspace/K_release/homebrew-k/../kframework-5.1.166-src.tar.gz"
+  url "https://github.com/kframework/k/releases/download/v5.1.166/kframework-5.1.166-src.tar.gz"
   sha256 "e4dc228e041a5c1e6b127c9bb5bfa16aebfaf87a2d661b3fca878bcd5cd6364f"
   bottle do
     root_url "https://github.com/kframework/k/releases/download/v5.1.166/"
