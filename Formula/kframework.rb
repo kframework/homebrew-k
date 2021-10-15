@@ -4,9 +4,9 @@ class Kframework < Formula
   url "file:////Users/jenkins-slave/workspace/K_release/homebrew-k/../kframework-5.1.228-src.tar.gz"
   sha256 "3fabee6e5fc831d13b563d88a07ce20118299603a80a55bf7c4a7697b53a09ee"
   bottle do
-    root_url "https://github.com/kframework/k/releases/download/v5.1.226/"
-    rebuild 84
-    sha256 big_sur: "30d85684d35020aa9e8e655f6ffca82932ab17861d0863559de9cbfad1340672"
+    root_url "https://github.com/kframework/k/releases/download/v5.1.228/"
+    rebuild 85
+    sha256 big_sur: "e70d6e848abecc3c5fced227c11dc7dad6eae491a8c8eea72ae2434037391c2c"
   end
   depends_on "boost" => :build
   depends_on "cmake" => :build
