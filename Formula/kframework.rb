@@ -26,6 +26,7 @@ class Kframework < Formula
     ENV["SDKROOT"] = MacOS.sdk_path
     ENV["DESTDIR"] = ""
     ENV["PREFIX"] = prefix.to_s
+    ENV["HOMEBREW_PREFIX"] = HOMEBREW_PREFIX
 
     # Unset MAKEFLAGS for `stack setup`.
     # Prevents `install: mkdir ... ghc-7.10.3/lib: File exists`
