@@ -1,10 +1,10 @@
 class Kframework < Formula
   desc "K Framework Tools 5.0"
   homepage ""
-  url "file:////Users/runner/work/k/k/homebrew-k/../kframework-5.2.0-src.tar.gz"
+  url "https://github.com/kframework/k/releases/download/v5.2.21/kframework-5.2.21-src.tar.gz"
   sha256 "f86ab059de48fdcaa0ee79b3217f43dced81084c020cff61726c0ece9ccad89b"
   bottle do
-    root_url "https://github.com/kframework/k/releases/download/v5.2.0/"
+    root_url "https://github.com/kframework/k/releases/download/v5.2.21/"
     rebuild 101
     sha256 cellar: :any, big_sur: "d1078b4fd7ab38da2c162dd99ba219c6d21960df8bdacca9bf763968d50de3c0"
   end
