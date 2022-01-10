@@ -20,6 +20,7 @@ class Kframework < Formula
   depends_on "libyaml"
   depends_on "llvm@12"
   depends_on "mpfr"
+  depends_on "openjdk"
   depends_on "z3"
 
   def install
