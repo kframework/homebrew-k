@@ -1,4 +1,4 @@
-class Cryptopp < Formula
+class CryptoppAT830 < Formula
   desc "Free C++ class library of cryptographic schemes"
   homepage "https://www.cryptopp.com/"
   url "https://github.com/weidai11/cryptopp/archive/CRYPTOPP_8_3_0.tar.gz"
