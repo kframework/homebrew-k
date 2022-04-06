@@ -14,7 +14,7 @@ class Kalgorand < Formula
   depends_on "pkg-config" => :build
   depends_on "z3" => :build
 
-  depends_on "kframework/k/cryptopp@8.3.0"
+  depends_on "kframework/k/cryptopp@8.6.0"
   depends_on "kframework/k/kframework"
 
   depends_on "boost"
