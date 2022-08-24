@@ -12,6 +12,7 @@ class Kframework < Formula
   depends_on "cmake" => :build
   depends_on "haskell-stack" => :build
   depends_on "maven" => :build
+  depends_on "poetry" => :build
   depends_on "pkg-config" => :build
   depends_on "bison"
   depends_on "flex"
