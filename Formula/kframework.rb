@@ -5,8 +5,8 @@ class Kframework < Formula
   sha256 "bd1cd67f658854e3313d06be7bbef686febad7ad4a34c0d78c64e3db4ebe968f"
   bottle do
     root_url "https://github.com/runtimeverification/k/releases/download/v5.4.9/"
-    rebuild 286
-    sha256 big_sur: "0e4c2c37587f852fac43e0fae41470db72cb55fa1999f09e9b29b7a599643e65"
+    rebuild 287
+    sha256 big_sur: "2f091c8c90933a1d04f03730cd8aed57d5a0f2abd66061520d4105c71d785ef8"
   end
   depends_on "boost" => :build
   depends_on "cmake" => :build
