@@ -15,6 +15,7 @@ class Kframework < Formula
   depends_on "pkg-config" => :build
   depends_on "bison"
   depends_on "flex"
+  depends_on "fmt"
   depends_on "gmp"
   depends_on "jemalloc"
   depends_on "libyaml"
