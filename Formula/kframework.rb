@@ -38,7 +38,7 @@ class Kframework < Formula
         # This is a hack to get LLVM off the PATH when building:
         # https://github.com/Homebrew/homebrew-core/issues/122863
         original_path = ENV["PATH"]
-        ENV["PATH"] = ENV["PATH"].sub "/usr/local/opt/llvm@13/bin:", ""
+        ENV["PATH"] = ENV["PATH"].sub "#{Formula["llvm@13"].bin}:", ""
         system "stack", "setup"
         ENV["PATH"] = original_path
       end
