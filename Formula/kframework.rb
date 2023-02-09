@@ -35,7 +35,12 @@ class Kframework < Formula
     # See also: https://github.com/brewsci/homebrew-science/blob/bb52ecc66b6f9fad4d281342139189ae81d7c410/Formula/tamarin-prover.rb#L27
     ENV.deparallelize do
       cd "haskell-backend/src/main/native/haskell-backend" do
+        # This is a hack to get LLVM off the PATH when building:
+        # https://github.com/Homebrew/homebrew-core/issues/122863
+        original_path = ENV["PATH"]
+        ENV["PATH"] = ENV["PATH"].sub "#{Formula["llvm@13"].bin}:", ""
         system "stack", "setup"
+        ENV["PATH"] = original_path
       end
     end
 
