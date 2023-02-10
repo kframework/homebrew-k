@@ -8,7 +8,12 @@ concurrency:
 jobs:
   install-from-source:
     name: 'Build and install K from formula'
-    runs-on: [macos-11, macos-12]
+    runs-on: ${{ matrix.os }}
+
+    strategy:
+      matrix:
+        os: [macos-11, macos-12]
+
     steps:
     - name: 'Check out code'
       uses: actions/checkout@v3
