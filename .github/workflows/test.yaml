@@ -1,0 +1,27 @@
+name: 'Test Homebrew formula'
+on:
+  pull_request:
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  install-from-source:
+    name: 'Build and install K from formula'
+    runs-on: [macos-11, macos-12]
+    steps:
+    - name: 'Check out code'
+      uses: actions/checkout@v3
+
+    - name: 'Install K formula'
+      run: |
+        brew install              \
+          ./Formula/kframework.rb \
+          --build-from-source     \
+          --verbose
+
+    - name: 'Smoke test'
+      run: |
+        kompile --help
+        krun    --help
+        kprove  --help
