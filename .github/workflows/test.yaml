@@ -18,12 +18,12 @@ jobs:
     - name: 'Check out code'
       uses: actions/checkout@v3
 
-    - name: 'Install K formula'
+    - name: 'Install K formulas'
       run: |
-        brew install              \
-          ./Formula/kframework.rb \
-          --build-from-source     \
-          --verbose
+        brew tap kframework/k file://$(pwd)
+        brew install --build-from-source cryptopp@8.3.0
+        brew install --build-from-source cryptopp@8.6.0
+        brew install --build-from-source kframework
 
     - name: 'Smoke test'
       run: |
