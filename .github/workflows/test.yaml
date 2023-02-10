@@ -23,14 +23,16 @@ jobs:
         brew tap kframework/k file://$(pwd)
 
         brew install --build-from-source cryptopp@8.3.0
-        brew uninstall cryptopp@8.3.0
+        brew unlink cryptopp@8.3.0
 
         brew install --build-from-source cryptopp@8.6.0
-        brew uninstall cryptopp@8.6.0
+        brew unlink cryptopp@8.6.0
 
         brew install --build-from-source kframework
 
     - name: 'Smoke test'
+      env:
+        JAVA_HOME: ${{ env.JAVA_HOME_11_X64 }}
       run: |
         kompile --help
         krun    --help
