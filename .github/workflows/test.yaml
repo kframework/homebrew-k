@@ -1,0 +1,39 @@
+name: 'Test Homebrew formula'
+on:
+  pull_request:
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  install-from-source:
+    name: 'Build and install K from formula'
+    runs-on: ${{ matrix.os }}
+
+    strategy:
+      matrix:
+        os: [macos-11, macos-12]
+
+    steps:
+    - name: 'Check out code'
+      uses: actions/checkout@v3
+
+    - name: 'Install K formulas'
+      run: |
+        brew tap kframework/k file://$(pwd)
+
+        brew install --build-from-source cryptopp@8.3.0
+        brew unlink cryptopp@8.3.0
+
+        brew install --build-from-source cryptopp@8.6.0
+        brew unlink cryptopp@8.6.0
+
+        brew install --build-from-source kframework
+
+    - name: 'Smoke test'
+      env:
+        JAVA_HOME: ${{ env.JAVA_HOME_11_X64 }}
+      run: |
+        kompile --help
+        krun    --help
+        kprove  --help

@@ -37,10 +37,9 @@ class Kframework < Formula
       cd "haskell-backend/src/main/native/haskell-backend" do
         # This is a hack to get LLVM off the PATH when building:
         # https://github.com/Homebrew/homebrew-core/issues/122863
-        original_path = ENV["PATH"]
-        ENV["PATH"] = ENV["PATH"].sub "#{Formula["llvm@13"].bin}:", ""
-        system "stack", "setup"
-        ENV["PATH"] = original_path
+        with_env(PATH: ENV["PATH"].sub("#{Formula["llvm@13"].bin}:", "")) do
+          system "stack", "setup"
+        end
       end
     end
 
