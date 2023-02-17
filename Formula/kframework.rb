@@ -1,12 +1,12 @@
 class Kframework < Formula
   desc "K Framework Tools 5.0"
   homepage ""
-  url "https://github.com/runtimeverification/k/releases/download/v5.5.98/kframework-5.5.98-src.tar.gz"
-  sha256 "457ba365f73648d1bd662de7af1dab28ba0ae1092f4fde36b86d9145f14e216d"
+  url "https://github.com/runtimeverification/k/releases/download/v5.5.99/kframework-5.5.99-src.tar.gz"
+  sha256 "e29722ba0285c46373eb77b65f49e02468d15224fcebb6812c2899b67423c305"
   bottle do
-    root_url "https://github.com/runtimeverification/k/releases/download/v5.5.98/"
-    rebuild 383
-    sha256 cellar: :any, big_sur: "0bf9b666d36654186901b09419ec64073bc623b4d74fbcebb9553245cc22ef14"
+    root_url "https://github.com/runtimeverification/k/releases/download/v5.5.99/"
+    rebuild 384
+    sha256 cellar: :any, big_sur: "cb69f702882436cdd429473efb12930a4c698cc06cb96654feb9e187d2618c5b"
   end
   depends_on "boost" => :build
   depends_on "cmake" => :build
