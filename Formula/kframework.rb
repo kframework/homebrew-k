@@ -1,12 +1,12 @@
 class Kframework < Formula
   desc "K Framework Tools 5.0"
   homepage ""
-  url "https://github.com/runtimeverification/k/releases/download/v5.6.5/kframework-5.6.5-src.tar.gz"
-  sha256 "9f42c818d238e7efcd6688463032e8fccd11b5ae4c8ad935607c189334bf6509"
+  url "https://github.com/runtimeverification/k/releases/download/v5.6.6/kframework-5.6.6-src.tar.gz"
+  sha256 "d027952582a58e04789b8e7a131914e4277652ae0aa3ecae96f0d613ab39c98d"
   bottle do
-    root_url "https://github.com/runtimeverification/k/releases/download/v5.6.5/"
-    rebuild 425
-    sha256 big_sur: "13816e19a9efce1e7718daa43601008ed4d8486f051df97a1b91acdf797fd008"
+    root_url "https://github.com/runtimeverification/k/releases/download/v5.6.6/"
+    rebuild 426
+    sha256 big_sur: "80a07d7d4b5ee8cd1413e753272328e56e75d8669a3d295f6f0a7e4f70f7a73f"
   end
   depends_on "boost" => :build
   depends_on "cmake" => :build
@@ -19,7 +19,7 @@ class Kframework < Formula
   depends_on "gmp"
   depends_on "jemalloc"
   depends_on "libyaml"
-  depends_on "llvm@15"
+  depends_on "llvm@13"
   depends_on "mpfr"
   depends_on "openjdk"
   depends_on "z3"
@@ -37,7 +37,7 @@ class Kframework < Formula
       cd "haskell-backend/src/main/native/haskell-backend" do
         # This is a hack to get LLVM off the PATH when building:
         # https://github.com/Homebrew/homebrew-core/issues/122863
-        with_env(PATH: ENV["PATH"].sub("#{Formula["llvm@15"].bin}:", "")) do
+        with_env(PATH: ENV["PATH"].sub("#{Formula["llvm@13"].bin}:", "")) do
           system "stack", "setup"
         end
       end
