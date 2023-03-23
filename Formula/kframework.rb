@@ -19,7 +19,7 @@ class Kframework < Formula
   depends_on "gmp"
   depends_on "jemalloc"
   depends_on "libyaml"
-  depends_on "llvm@13"
+  depends_on "llvm@15"
   depends_on "mpfr"
   depends_on "openjdk"
   depends_on "z3"
@@ -37,7 +37,7 @@ class Kframework < Formula
       cd "haskell-backend/src/main/native/haskell-backend" do
         # This is a hack to get LLVM off the PATH when building:
         # https://github.com/Homebrew/homebrew-core/issues/122863
-        with_env(PATH: ENV["PATH"].sub("#{Formula["llvm@13"].bin}:", "")) do
+        with_env(PATH: ENV["PATH"].sub("#{Formula["llvm@15"].bin}:", "")) do
           system "stack", "setup"
         end
       end
