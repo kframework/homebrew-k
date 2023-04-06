@@ -41,6 +41,8 @@ class Kframework < Formula
         with_env(PATH: ENV["PATH"].sub("#{Formula["llvm@13"].bin}:", "")) do
           system "stack", "setup"
         end
+
+        system "stack", "build"
       end
     end
 
