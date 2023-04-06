@@ -27,13 +27,13 @@ jobs:
       run: |
         brew tap kframework/k file://$(pwd)
 
-        brew install --build-from-source cryptopp@8.3.0
+        brew install --build-from-source --verbose cryptopp@8.3.0
         brew unlink cryptopp@8.3.0
 
-        brew install --build-from-source cryptopp@8.6.0
+        brew install --build-from-source --verbosecryptopp@8.6.0 
         brew unlink cryptopp@8.6.0
 
-        brew install --build-from-source kframework
+        brew install --build-from-source --verbose kframework 
 
     - name: 'Smoke test'
       env:
