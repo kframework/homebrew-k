@@ -29,7 +29,6 @@ class Kframework < Formula
     ENV["DESTDIR"] = ""
     ENV["PREFIX"] = prefix.to_s
     ENV["HOMEBREW_PREFIX"] = HOMEBREW_PREFIX
-    # ENV["MAVEN_OPTS"] = ENV["HOMEBREW_MAVEN_OPTS"]
 
     # Unset MAKEFLAGS for `stack setup`.
     # Prevents `install: mkdir ... ghc-7.10.3/lib: File exists`
@@ -42,6 +41,8 @@ class Kframework < Formula
           system "stack", "setup"
         end
 
+        # Build the Haskell backend before running maven so that our connections
+        # don't time out.
         system "stack", "build"
       end
     end
