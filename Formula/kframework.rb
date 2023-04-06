@@ -29,7 +29,7 @@ class Kframework < Formula
     ENV["DESTDIR"] = ""
     ENV["PREFIX"] = prefix.to_s
     ENV["HOMEBREW_PREFIX"] = HOMEBREW_PREFIX
-    ENV["MAVEN_OPTS"] = ENV["HOMEBREW_MAVEN_OPTS"]
+    # ENV["MAVEN_OPTS"] = ENV["HOMEBREW_MAVEN_OPTS"]
 
     # Unset MAKEFLAGS for `stack setup`.
     # Prevents `install: mkdir ... ghc-7.10.3/lib: File exists`
@@ -44,7 +44,7 @@ class Kframework < Formula
       end
     end
 
-    system "mvn", "package", "-DskipTests", "-Dproject.build.type=FastBuild", "-Dhttp.keepAlive=false", "-Dmaven.wagon.http.pool=false", "-Dmaven.wagon.httpconnectionManager.ttlSeconds=30"
+    system "mvn", "package", "-DskipTests", "-Dproject.build.type=FastBuild", "-Dmaven.wagon.httpconnectionManager.ttlSeconds=30"
     system "package/package"
   end
 
