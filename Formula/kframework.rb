@@ -44,7 +44,7 @@ class Kframework < Formula
       end
     end
 
-    system "mvn", "package", "-DskipTests", "-Dproject.build.type=FastBuild"
+    system "mvn", "package", "-DskipTests", "-Dproject.build.type=FastBuild", "-Dhttp.keepAlive=false", "-Dmaven.wagon.http.pool=false", "-Dmaven.wagon.httpconnectionManager.ttlSeconds=30"
     system "package/package"
   end
 
