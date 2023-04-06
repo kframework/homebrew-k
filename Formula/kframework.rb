@@ -40,10 +40,14 @@ class Kframework < Formula
         with_env(PATH: ENV["PATH"].sub("#{Formula["llvm@13"].bin}:", "")) do
           system "stack", "setup"
         end
+
+        # Build the Haskell backend before running maven so that our connections
+        # don't time out.
+        system "stack", "build"
       end
     end
 
-    system "mvn", "package", "-DskipTests", "-Dproject.build.type=FastBuild"
+    system "mvn", "package", "-DskipTests", "-Dproject.build.type=FastBuild", "-Dmaven.wagon.httpconnectionManager.ttlSeconds=30"
     system "package/package"
   end
 
