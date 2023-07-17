@@ -34,16 +34,21 @@ class Kframework < Formula
     # Prevents `install: mkdir ... ghc-7.10.3/lib: File exists`
     # See also: https://github.com/brewsci/homebrew-science/blob/bb52ecc66b6f9fad4d281342139189ae81d7c410/Formula/tamarin-prover.rb#L27
     ENV.deparallelize do
-      cd "haskell-backend/src/main/native/haskell-backend" do
         # This is a hack to get LLVM off the PATH when building:
         # https://github.com/Homebrew/homebrew-core/issues/122863
         with_env(PATH: ENV["PATH"].sub("#{Formula["llvm@13"].bin}:", "")) do
+
+        # For both components, we need to run the stack phases _outside_ of
+        # Maven to prevent connections from timing out.
+        cd "haskell-backend/src/main/native/haskell-backend" do
           system "stack", "setup"
+          system "stack", "build"
         end
 
-        # Build the Haskell backend before running maven so that our connections
-        # don't time out.
-        system "stack", "build"
+        cd "hs-backend-booster/src/main/native/hs-backend-booster" do
+          system "stack", "setup"
+          system "stack", "build"
+        end
       end
     end
 
