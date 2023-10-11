@@ -22,6 +22,7 @@ class Kframework < Formula
   depends_on "llvm@13"
   depends_on "mpfr"
   depends_on "openjdk"
+  depends_on "secp256k1"
   depends_on "z3"
 
   def install
