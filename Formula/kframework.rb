@@ -8,12 +8,12 @@ class Kframework < Formula
     rebuild 611
     sha256 ventura: "6ce3bb896d8a073d5024b1c5d9867e1cca0b20ebe2d0b5a2c6ea7737cf610ddf"
   end
-  depends_on "boost" => :build
   depends_on "cmake" => :build
   depends_on "haskell-stack" => :build
   depends_on "maven" => :build
   depends_on "pkg-config" => :build
   depends_on "bison"
+  depends_on "boost"
   depends_on "flex"
   depends_on "fmt"
   depends_on "gmp"
